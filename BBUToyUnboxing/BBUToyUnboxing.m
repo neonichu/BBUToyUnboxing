@@ -141,8 +141,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark - Plugin lifecycle
 
-+ (void)pluginDidLoad:(NSBundle *)plugin
-{
++ (void)pluginDidLoad:(NSBundle *)plugin {
     static dispatch_once_t onceToken;
     NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
     if ([currentApplicationName isEqual:@"Xcode"]) {
@@ -155,8 +154,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
     }
 }
 
-- (id)initWithBundle:(NSBundle *)plugin
-{
+- (id)initWithBundle:(NSBundle *)plugin {
     if (self = [super init]) {
         self.bundle = plugin;
 
@@ -165,8 +163,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
