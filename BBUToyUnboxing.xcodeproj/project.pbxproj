@@ -9,20 +9,27 @@
 /* Begin PBXBuildFile section */
 		A19D9FE519595C8B00741C09 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D9FE419595C8B00741C09 /* AppKit.framework */; };
 		A19D9FE719595C8B00741C09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D9FE619595C8B00741C09 /* Foundation.framework */; };
-		A19D9FF019595C8B00741C09 /* BBUBBUToyUnboxing.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FEF19595C8B00741C09 /* BBUBBUToyUnboxing.m */; };
+		A19D9FF019595C8B00741C09 /* BBUToyUnboxing.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */; };
 		A19D9FF919595D6A00741C09 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FF819595D6A00741C09 /* Aspects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1010CBB1961693B005A2E4D /* DVTLineOffsetAwareStringWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTLineOffsetAwareStringWrapper.h; sourceTree = "<group>"; };
 		A19D9FE119595C8B00741C09 /* BBUToyUnboxing.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBUToyUnboxing.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D9FE419595C8B00741C09 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A19D9FE619595C8B00741C09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A19D9FEA19595C8B00741C09 /* BBUToyUnboxing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBUToyUnboxing-Info.plist"; sourceTree = "<group>"; };
-		A19D9FEE19595C8B00741C09 /* BBUBBUToyUnboxing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBUBBUToyUnboxing.h; sourceTree = "<group>"; };
-		A19D9FEF19595C8B00741C09 /* BBUBBUToyUnboxing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBUBBUToyUnboxing.m; sourceTree = "<group>"; };
+		A19D9FEE19595C8B00741C09 /* BBUToyUnboxing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBUToyUnboxing.h; sourceTree = "<group>"; };
+		A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBUToyUnboxing.m; sourceTree = "<group>"; };
 		A19D9FF119595C8B00741C09 /* BBUToyUnboxing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBUToyUnboxing-Prefix.pch"; sourceTree = "<group>"; };
 		A19D9FF719595D6A00741C09 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Aspects.h; path = contrib/Aspects.h; sourceTree = SOURCE_ROOT; };
 		A19D9FF819595D6A00741C09 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Aspects.m; path = contrib/Aspects.m; sourceTree = SOURCE_ROOT; };
+		A1AAA5071962B3520016A226 /* IDELocalComputerPlaygroundExecutionDeviceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDELocalComputerPlaygroundExecutionDeviceService.h; sourceTree = "<group>"; };
+		A1AAA5081962B3690016A226 /* IDEPlaygroundExecutionDeviceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionDeviceService.h; sourceTree = "<group>"; };
+		A1AAA5091962B3990016A226 /* DVTDeviceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTDeviceService.h; sourceTree = "<group>"; };
+		A1CE09FF19615E8D000475FE /* IDEPlaygroundExecutionParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionParameters.h; sourceTree = "<group>"; };
+		A1CE0A0019615E8D000475FE /* IDEPlaygroundExecutionSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionSession.h; sourceTree = "<group>"; };
+		A1CE0A0119615E8D000475FE /* IDEPlaygroundPreparationParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundPreparationParameters.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +77,15 @@
 			children = (
 				A19D9FF719595D6A00741C09 /* Aspects.h */,
 				A19D9FF819595D6A00741C09 /* Aspects.m */,
-				A19D9FEE19595C8B00741C09 /* BBUBBUToyUnboxing.h */,
-				A19D9FEF19595C8B00741C09 /* BBUBBUToyUnboxing.m */,
+				A19D9FEE19595C8B00741C09 /* BBUToyUnboxing.h */,
+				A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */,
+				A1AAA5091962B3990016A226 /* DVTDeviceService.h */,
+				A1010CBB1961693B005A2E4D /* DVTLineOffsetAwareStringWrapper.h */,
+				A1AAA5071962B3520016A226 /* IDELocalComputerPlaygroundExecutionDeviceService.h */,
+				A1AAA5081962B3690016A226 /* IDEPlaygroundExecutionDeviceService.h */,
+				A1CE09FF19615E8D000475FE /* IDEPlaygroundExecutionParameters.h */,
+				A1CE0A0019615E8D000475FE /* IDEPlaygroundExecutionSession.h */,
+				A1CE0A0119615E8D000475FE /* IDEPlaygroundPreparationParameters.h */,
 			);
 			name = Code;
 			path = BBUToyUnboxing;
@@ -149,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A19D9FF019595C8B00741C09 /* BBUBBUToyUnboxing.m in Sources */,
+				A19D9FF019595C8B00741C09 /* BBUToyUnboxing.m in Sources */,
 				A19D9FF919595D6A00741C09 /* Aspects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +205,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -223,6 +241,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -276,6 +298,7 @@
 				A19D9FF619595C8B00741C09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
