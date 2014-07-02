@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13127AF1963545100F418CF /* BBUHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A13127AE1963545100F418CF /* BBUHook.m */; };
+		A13F705E19634AFB00C5CE4D /* PlaygroundInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = A13F705D19634AFB00C5CE4D /* PlaygroundInjector.m */; };
 		A19D9FE519595C8B00741C09 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D9FE419595C8B00741C09 /* AppKit.framework */; };
 		A19D9FE719595C8B00741C09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D9FE619595C8B00741C09 /* Foundation.framework */; };
 		A19D9FF019595C8B00741C09 /* BBUToyUnboxing.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */; };
 		A19D9FF919595D6A00741C09 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FF819595D6A00741C09 /* Aspects.m */; };
+		A1C53DC5196355B0008EC61A /* BBUHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A13127AE1963545100F418CF /* BBUHook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1010CBB1961693B005A2E4D /* DVTLineOffsetAwareStringWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTLineOffsetAwareStringWrapper.h; sourceTree = "<group>"; };
+		A13127AD1963545100F418CF /* BBUHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUHook.h; sourceTree = "<group>"; };
+		A13127AE1963545100F418CF /* BBUHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUHook.m; sourceTree = "<group>"; };
+		A13F705919634AFB00C5CE4D /* libPlaygroundInjector.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPlaygroundInjector.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13F705D19634AFB00C5CE4D /* PlaygroundInjector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaygroundInjector.m; sourceTree = "<group>"; };
+		A14DD12619635BB8004660FA /* IDEIndexSwiftDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEIndexSwiftDataSource.h; sourceTree = "<group>"; };
+		A16584AE1962F64900AB082D /* IDEPlaygroundExecutionSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionSession.h; sourceTree = "<group>"; };
+		A16BBB541963013F00B60D95 /* DVTLineOffsetAwareStringWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTLineOffsetAwareStringWrapper.h; sourceTree = "<group>"; };
+		A16BBB551963013F00B60D95 /* IDEPlaygroundExecutionParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionParameters.h; sourceTree = "<group>"; };
+		A16BBB561963013F00B60D95 /* IDEPlaygroundPreparationParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundPreparationParameters.h; sourceTree = "<group>"; };
+		A16BBB57196301EB00B60D95 /* DVTSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTSDK.h; sourceTree = "<group>"; };
 		A19D9FE119595C8B00741C09 /* BBUToyUnboxing.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBUToyUnboxing.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D9FE419595C8B00741C09 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A19D9FE619595C8B00741C09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -27,12 +39,17 @@
 		A1AAA5071962B3520016A226 /* IDELocalComputerPlaygroundExecutionDeviceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDELocalComputerPlaygroundExecutionDeviceService.h; sourceTree = "<group>"; };
 		A1AAA5081962B3690016A226 /* IDEPlaygroundExecutionDeviceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionDeviceService.h; sourceTree = "<group>"; };
 		A1AAA5091962B3990016A226 /* DVTDeviceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTDeviceService.h; sourceTree = "<group>"; };
-		A1CE09FF19615E8D000475FE /* IDEPlaygroundExecutionParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionParameters.h; sourceTree = "<group>"; };
-		A1CE0A0019615E8D000475FE /* IDEPlaygroundExecutionSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionSession.h; sourceTree = "<group>"; };
-		A1CE0A0119615E8D000475FE /* IDEPlaygroundPreparationParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundPreparationParameters.h; sourceTree = "<group>"; };
+		A1AD429419635C0600B1F9ED /* IDEIndexDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEIndexDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A13F705619634AFA00C5CE4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A19D9FDE19595C8B00741C09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,13 +62,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A13F705A19634AFB00C5CE4D /* PlaygroundInjector */ = {
+			isa = PBXGroup;
+			children = (
+				A13F705D19634AFB00C5CE4D /* PlaygroundInjector.m */,
+			);
+			path = PlaygroundInjector;
+			sourceTree = "<group>";
+		};
 		A19D9FD819595C8B00741C09 = {
 			isa = PBXGroup;
 			children = (
 				A19D9FE819595C8B00741C09 /* Code */,
 				A19D9FE319595C8B00741C09 /* Frameworks */,
+				A13F705A19634AFB00C5CE4D /* PlaygroundInjector */,
 				A19D9FE219595C8B00741C09 /* Products */,
 				A19D9FE919595C8B00741C09 /* Supporting Files */,
+				A1BCC4C21962F5B60053FD71 /* Xcode Headers */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A19D9FE119595C8B00741C09 /* BBUToyUnboxing.xcplugin */,
+				A13F705919634AFB00C5CE4D /* libPlaygroundInjector.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,15 +105,10 @@
 			children = (
 				A19D9FF719595D6A00741C09 /* Aspects.h */,
 				A19D9FF819595D6A00741C09 /* Aspects.m */,
+				A13127AD1963545100F418CF /* BBUHook.h */,
+				A13127AE1963545100F418CF /* BBUHook.m */,
 				A19D9FEE19595C8B00741C09 /* BBUToyUnboxing.h */,
 				A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */,
-				A1AAA5091962B3990016A226 /* DVTDeviceService.h */,
-				A1010CBB1961693B005A2E4D /* DVTLineOffsetAwareStringWrapper.h */,
-				A1AAA5071962B3520016A226 /* IDELocalComputerPlaygroundExecutionDeviceService.h */,
-				A1AAA5081962B3690016A226 /* IDEPlaygroundExecutionDeviceService.h */,
-				A1CE09FF19615E8D000475FE /* IDEPlaygroundExecutionParameters.h */,
-				A1CE0A0019615E8D000475FE /* IDEPlaygroundExecutionSession.h */,
-				A1CE0A0119615E8D000475FE /* IDEPlaygroundPreparationParameters.h */,
 			);
 			name = Code;
 			path = BBUToyUnboxing;
@@ -101,9 +124,54 @@
 			path = BBUToyUnboxing;
 			sourceTree = "<group>";
 		};
+		A1BCC4C21962F5B60053FD71 /* Xcode Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A1AAA5091962B3990016A226 /* DVTDeviceService.h */,
+				A16BBB541963013F00B60D95 /* DVTLineOffsetAwareStringWrapper.h */,
+				A16BBB57196301EB00B60D95 /* DVTSDK.h */,
+				A1AD429419635C0600B1F9ED /* IDEIndexDataSource.h */,
+				A14DD12619635BB8004660FA /* IDEIndexSwiftDataSource.h */,
+				A1AAA5071962B3520016A226 /* IDELocalComputerPlaygroundExecutionDeviceService.h */,
+				A1AAA5081962B3690016A226 /* IDEPlaygroundExecutionDeviceService.h */,
+				A16BBB551963013F00B60D95 /* IDEPlaygroundExecutionParameters.h */,
+				A16584AE1962F64900AB082D /* IDEPlaygroundExecutionSession.h */,
+				A16BBB561963013F00B60D95 /* IDEPlaygroundPreparationParameters.h */,
+			);
+			name = "Xcode Headers";
+			path = XcodeHeaders;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A13F705719634AFA00C5CE4D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		A13F705819634AFA00C5CE4D /* PlaygroundInjector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13F706E19634AFB00C5CE4D /* Build configuration list for PBXNativeTarget "PlaygroundInjector" */;
+			buildPhases = (
+				A13F705519634AFA00C5CE4D /* Sources */,
+				A13F705619634AFA00C5CE4D /* Frameworks */,
+				A13F705719634AFA00C5CE4D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaygroundInjector;
+			productName = PlaygroundInjector;
+			productReference = A13F705919634AFB00C5CE4D /* libPlaygroundInjector.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		A19D9FE019595C8B00741C09 /* BBUToyUnboxing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A19D9FF419595C8B00741C09 /* Build configuration list for PBXNativeTarget "BBUToyUnboxing" */;
@@ -128,8 +196,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BBU;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Boris Bügling";
+				TargetAttributes = {
+					A13F705819634AFA00C5CE4D = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
 			};
 			buildConfigurationList = A19D9FDC19595C8B00741C09 /* Build configuration list for PBXProject "BBUToyUnboxing" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -144,6 +217,7 @@
 			projectRoot = "";
 			targets = (
 				A19D9FE019595C8B00741C09 /* BBUToyUnboxing */,
+				A13F705819634AFA00C5CE4D /* PlaygroundInjector */,
 			);
 		};
 /* End PBXProject section */
@@ -159,18 +233,74 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A13F705519634AFA00C5CE4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C53DC5196355B0008EC61A /* BBUHook.m in Sources */,
+				A13F705E19634AFB00C5CE4D /* PlaygroundInjector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A19D9FDD19595C8B00741C09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A19D9FF019595C8B00741C09 /* BBUToyUnboxing.m in Sources */,
 				A19D9FF919595D6A00741C09 /* Aspects.m in Sources */,
+				A13127AF1963545100F418CF /* BBUHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A13F706A19634AFB00C5CE4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+					"-init",
+					_InjectFrameworksIntoPlaygroundStub,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A13F706B19634AFB00C5CE4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+					"-init",
+					_InjectFrameworksIntoPlaygroundStub,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A19D9FF219595C8B00741C09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -282,6 +412,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A13F706E19634AFB00C5CE4D /* Build configuration list for PBXNativeTarget "PlaygroundInjector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13F706A19634AFB00C5CE4D /* Debug */,
+				A13F706B19634AFB00C5CE4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A19D9FDC19595C8B00741C09 /* Build configuration list for PBXProject "BBUToyUnboxing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
