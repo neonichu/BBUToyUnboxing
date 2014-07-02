@@ -43,6 +43,10 @@ static BBUToyUnboxing *sharedPlugin;
     NSString* pathToFramework = [self getDerivedDataDirectoryWithPrefix:@"BBUToyUnboxing-"];
     pathToFramework = [pathToFramework stringByAppendingPathComponent:@"Build/Products/Debug/libPlaygroundInjector.dylib"];
 
+    if (![[NSFileManager defaultManager] fileExistsAtPath:pathToFramework]) {
+        pathToFramework = [self.bundle pathForResource:@"libPlaygroundInjector" ofType:@"dylib"];
+    }
+
     NSLog(PREFIX @"injecting %@ into Stub process.", pathToFramework);
 
     [BBUHook hookClass:"IDELocalComputerPlaygroundExecutionDeviceService"

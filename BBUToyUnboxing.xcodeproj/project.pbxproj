@@ -15,6 +15,7 @@
 		A15DFFC6196424E40008EBE4 /* IDEViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC5196424E40008EBE4 /* IDEViewController.h */; };
 		A15DFFC8196424FF0008EBE4 /* DVTViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC7196424FF0008EBE4 /* DVTViewController.h */; };
 		A15DFFCA19642F0A0008EBE4 /* DVTTextSidebarView.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC919642F0A0008EBE4 /* DVTTextSidebarView.h */; };
+		A16690E1196492C400216E0F /* libPlaygroundInjector.dylib in Resources */ = {isa = PBXBuildFile; fileRef = A16690E0196492BA00216E0F /* libPlaygroundInjector.dylib */; };
 		A193022A1964394F003468F3 /* IDESourceLanguageServiceSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = A19302291964394F003468F3 /* IDESourceLanguageServiceSwift.h */; };
 		A193022C196439DA003468F3 /* DVTSourceLanguageService.h in Headers */ = {isa = PBXBuildFile; fileRef = A193022B196439DA003468F3 /* DVTSourceLanguageService.h */; };
 		A193022E19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A193022D19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h */; };
@@ -38,6 +39,7 @@
 		A15DFFC7196424FF0008EBE4 /* DVTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTViewController.h; sourceTree = "<group>"; };
 		A15DFFC919642F0A0008EBE4 /* DVTTextSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTTextSidebarView.h; sourceTree = "<group>"; };
 		A16584AE1962F64900AB082D /* IDEPlaygroundExecutionSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionSession.h; sourceTree = "<group>"; };
+		A16690E0196492BA00216E0F /* libPlaygroundInjector.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libPlaygroundInjector.dylib; sourceTree = "<group>"; };
 		A16BBB541963013F00B60D95 /* DVTLineOffsetAwareStringWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTLineOffsetAwareStringWrapper.h; sourceTree = "<group>"; };
 		A16BBB551963013F00B60D95 /* IDEPlaygroundExecutionParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionParameters.h; sourceTree = "<group>"; };
 		A16BBB561963013F00B60D95 /* IDEPlaygroundPreparationParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundPreparationParameters.h; sourceTree = "<group>"; };
@@ -88,12 +90,21 @@
 			path = PlaygroundInjector;
 			sourceTree = "<group>";
 		};
+		A16690DF196492A800216E0F /* Pre-Build */ = {
+			isa = PBXGroup;
+			children = (
+				A16690E0196492BA00216E0F /* libPlaygroundInjector.dylib */,
+			);
+			name = "Pre-Build";
+			sourceTree = "<group>";
+		};
 		A19D9FD819595C8B00741C09 = {
 			isa = PBXGroup;
 			children = (
 				A19D9FE819595C8B00741C09 /* Code */,
 				A19D9FE319595C8B00741C09 /* Frameworks */,
 				A13F705A19634AFB00C5CE4D /* PlaygroundInjector */,
+				A16690DF196492A800216E0F /* Pre-Build */,
 				A19D9FE219595C8B00741C09 /* Products */,
 				A19D9FE919595C8B00741C09 /* Supporting Files */,
 				A1BCC4C21962F5B60053FD71 /* Xcode Headers */,
@@ -263,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16690E1196492C400216E0F /* libPlaygroundInjector.dylib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
