@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		A13127AF1963545100F418CF /* BBUHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A13127AE1963545100F418CF /* BBUHook.m */; };
 		A13F705E19634AFB00C5CE4D /* PlaygroundInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = A13F705D19634AFB00C5CE4D /* PlaygroundInjector.m */; };
+		A15DFFC01964242D0008EBE4 /* IDEPlaygroundEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFBF1964242D0008EBE4 /* IDEPlaygroundEditor.h */; };
+		A15DFFC2196424970008EBE4 /* IDESourceCodeEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC1196424970008EBE4 /* IDESourceCodeEditor.h */; };
+		A15DFFC4196424C20008EBE4 /* IDEEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC3196424C20008EBE4 /* IDEEditor.h */; };
+		A15DFFC6196424E40008EBE4 /* IDEViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC5196424E40008EBE4 /* IDEViewController.h */; };
+		A15DFFC8196424FF0008EBE4 /* DVTViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC7196424FF0008EBE4 /* DVTViewController.h */; };
+		A15DFFCA19642F0A0008EBE4 /* DVTTextSidebarView.h in Headers */ = {isa = PBXBuildFile; fileRef = A15DFFC919642F0A0008EBE4 /* DVTTextSidebarView.h */; };
+		A193022A1964394F003468F3 /* IDESourceLanguageServiceSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = A19302291964394F003468F3 /* IDESourceLanguageServiceSwift.h */; };
+		A193022C196439DA003468F3 /* DVTSourceLanguageService.h in Headers */ = {isa = PBXBuildFile; fileRef = A193022B196439DA003468F3 /* DVTSourceLanguageService.h */; };
+		A193022E19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A193022D19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h */; };
 		A19D9FE519595C8B00741C09 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D9FE419595C8B00741C09 /* AppKit.framework */; };
 		A19D9FE719595C8B00741C09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19D9FE619595C8B00741C09 /* Foundation.framework */; };
 		A19D9FF019595C8B00741C09 /* BBUToyUnboxing.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */; };
@@ -22,11 +31,20 @@
 		A13F705919634AFB00C5CE4D /* libPlaygroundInjector.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPlaygroundInjector.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13F705D19634AFB00C5CE4D /* PlaygroundInjector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaygroundInjector.m; sourceTree = "<group>"; };
 		A14DD12619635BB8004660FA /* IDEIndexSwiftDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEIndexSwiftDataSource.h; sourceTree = "<group>"; };
+		A15DFFBF1964242D0008EBE4 /* IDEPlaygroundEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundEditor.h; sourceTree = "<group>"; };
+		A15DFFC1196424970008EBE4 /* IDESourceCodeEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDESourceCodeEditor.h; sourceTree = "<group>"; };
+		A15DFFC3196424C20008EBE4 /* IDEEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEEditor.h; sourceTree = "<group>"; };
+		A15DFFC5196424E40008EBE4 /* IDEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEViewController.h; sourceTree = "<group>"; };
+		A15DFFC7196424FF0008EBE4 /* DVTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTViewController.h; sourceTree = "<group>"; };
+		A15DFFC919642F0A0008EBE4 /* DVTTextSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTTextSidebarView.h; sourceTree = "<group>"; };
 		A16584AE1962F64900AB082D /* IDEPlaygroundExecutionSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionSession.h; sourceTree = "<group>"; };
 		A16BBB541963013F00B60D95 /* DVTLineOffsetAwareStringWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTLineOffsetAwareStringWrapper.h; sourceTree = "<group>"; };
 		A16BBB551963013F00B60D95 /* IDEPlaygroundExecutionParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundExecutionParameters.h; sourceTree = "<group>"; };
 		A16BBB561963013F00B60D95 /* IDEPlaygroundPreparationParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEPlaygroundPreparationParameters.h; sourceTree = "<group>"; };
 		A16BBB57196301EB00B60D95 /* DVTSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTSDK.h; sourceTree = "<group>"; };
+		A19302291964394F003468F3 /* IDESourceLanguageServiceSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDESourceLanguageServiceSwift.h; sourceTree = "<group>"; };
+		A193022B196439DA003468F3 /* DVTSourceLanguageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTSourceLanguageService.h; sourceTree = "<group>"; };
+		A193022D19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h"; sourceTree = "<group>"; };
 		A19D9FE119595C8B00741C09 /* BBUToyUnboxing.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBUToyUnboxing.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D9FE419595C8B00741C09 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A19D9FE619595C8B00741C09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,13 +148,22 @@
 				A1AAA5091962B3990016A226 /* DVTDeviceService.h */,
 				A16BBB541963013F00B60D95 /* DVTLineOffsetAwareStringWrapper.h */,
 				A16BBB57196301EB00B60D95 /* DVTSDK.h */,
+				A193022B196439DA003468F3 /* DVTSourceLanguageService.h */,
+				A15DFFC919642F0A0008EBE4 /* DVTTextSidebarView.h */,
+				A15DFFC7196424FF0008EBE4 /* DVTViewController.h */,
+				A15DFFC3196424C20008EBE4 /* IDEEditor.h */,
 				A1AD429419635C0600B1F9ED /* IDEIndexDataSource.h */,
 				A14DD12619635BB8004660FA /* IDEIndexSwiftDataSource.h */,
 				A1AAA5071962B3520016A226 /* IDELocalComputerPlaygroundExecutionDeviceService.h */,
+				A15DFFBF1964242D0008EBE4 /* IDEPlaygroundEditor.h */,
 				A1AAA5081962B3690016A226 /* IDEPlaygroundExecutionDeviceService.h */,
 				A16BBB551963013F00B60D95 /* IDEPlaygroundExecutionParameters.h */,
 				A16584AE1962F64900AB082D /* IDEPlaygroundExecutionSession.h */,
 				A16BBB561963013F00B60D95 /* IDEPlaygroundPreparationParameters.h */,
+				A15DFFC1196424970008EBE4 /* IDESourceCodeEditor.h */,
+				A19302291964394F003468F3 /* IDESourceLanguageServiceSwift.h */,
+				A193022D19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h */,
+				A15DFFC5196424E40008EBE4 /* IDEViewController.h */,
 			);
 			name = "Xcode Headers";
 			path = XcodeHeaders;
@@ -149,6 +176,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15DFFC4196424C20008EBE4 /* IDEEditor.h in Headers */,
+				A15DFFC8196424FF0008EBE4 /* DVTViewController.h in Headers */,
+				A15DFFCA19642F0A0008EBE4 /* DVTTextSidebarView.h in Headers */,
+				A15DFFC2196424970008EBE4 /* IDESourceCodeEditor.h in Headers */,
+				A193022C196439DA003468F3 /* DVTSourceLanguageService.h in Headers */,
+				A193022A1964394F003468F3 /* IDESourceLanguageServiceSwift.h in Headers */,
+				A15DFFC6196424E40008EBE4 /* IDEViewController.h in Headers */,
+				A193022E19643AB5003468F3 /* IDESourceLanguageServiceSwiftDiagnosticItems-Protocol.h in Headers */,
+				A15DFFC01964242D0008EBE4 /* IDEPlaygroundEditor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
