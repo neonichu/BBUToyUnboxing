@@ -8,10 +8,9 @@
 
 #import "BBUHook.h"
 #import "BBUToyUnboxing.h"
-#import "DVTSDK.h"
-#import "IDEIndexSwiftDataSource.h"
 #import "IDELocalComputerPlaygroundExecutionDeviceService.h"
 #import "IDEPlaygroundExecutionSession.h"
+#import "IDESourceLanguageServiceSwift.h"
 
 #define PlaygroundFrameworksPath    @"Library/Developer/Playground Frameworks"
 
@@ -60,42 +59,39 @@ static BBUToyUnboxing *sharedPlugin;
                      setenv("DYLD_INSERT_LIBRARIES", "", 1);
                  }];
 
-    [BBUHook hookClass:"DVTSDK"
-              selector:@selector(librarySearchPaths)
-               options:AspectPositionAfter
-                 block:^(id<AspectInfo> info) {
-                     NSArray* searchPaths = nil;
-                     [info.originalInvocation getReturnValue:&searchPaths];
+    static NSString* const argumentsKey = @"swiftASTCommandArguments";
+    static NSString* const buildSettingsKey = @"IDESourceLangaugeServiceContextBuildSettings";
 
-                     NSLog(PREFIX @"search paths: %@", searchPaths);
-                 }];
-
-    [BBUHook hookClass:"IDEPlaygroundExecutionDeviceService"
-              selector:@selector(overridingPlaygroundSearchPath)
+    [BBUHook hookClass:"IDESourceLanguageServiceSwift"
+              selector:@selector(_applyChangesFromSourceLanguageServiceContext:)
                options:AspectPositionInstead
-                 block:^(id<AspectInfo> info) {
-                     NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:PlaygroundFrameworksPath];
-                     [info.originalInvocation setReturnValue:&path];
+                 block:^(id<AspectInfo> info, NSDictionary* context) {
+                     NSMutableDictionary* mutableContext = [context mutableCopy];
+                     NSMutableDictionary* mutableBuildSettings = [context[buildSettingsKey] mutableCopy];
+                     NSMutableArray* mutableArguments = [mutableBuildSettings[argumentsKey] mutableCopy];
 
-                     NSLog(PREFIX @"overridingPlaygroundSearchPath: %@", path);
+                     NSIndexSet* indexes = [mutableArguments indexesOfObjectsPassingTest:^BOOL(NSString* argument,
+                                                                                               NSUInteger idx,
+                                                                                               BOOL *stop) {
+                         return [argument isEqualToString:@"-F"];
+                     }];
+
+                     NSUInteger insertionIndex = indexes.lastIndex + 2;
+                     if (insertionIndex < mutableArguments.count) {
+                         [mutableArguments insertObject:@"-F" atIndex:insertionIndex];
+                         [mutableArguments insertObject:[NSHomeDirectory() stringByAppendingPathComponent:PlaygroundFrameworksPath] atIndex:insertionIndex + 1];
+                     }
+
+                     if (mutableArguments && mutableBuildSettings) {
+                         mutableBuildSettings[argumentsKey] = [mutableArguments copy];
+                         mutableContext[buildSettingsKey] = [mutableBuildSettings copy];
+
+                         NSLog(PREFIX @"Fixed context: %@", mutableContext);
+                         [info.originalInvocation setArgument:&mutableContext atIndex:2];
+                     }
+
+                     [info.originalInvocation invoke];
                  }];
-
-    [BBUHook hookClass:"IDEIndexSwiftDataSource"
-              selector:@selector(handleSourceKitError:)
-               options:AspectPositionAfter
-                 block:^(id<AspectInfo> info, void* arg1) {
-                     NSLog(PREFIX @"Argument 1: %@", arg1);
-                 }];
-
-    [BBUHook hookClass:"IDEIndexSwiftDataSource"
-              selector:@selector(importedModule:moduleURL:settings:)
-               options:AspectPositionAfter block:^(id<AspectInfo> info,
-                                                   const char* module,
-                                                   NSURL* moduleURL,
-                                                   id settings) {
-                   NSLog(PREFIX @"module: %s, URL: %@, settings: %@",
-                         module, moduleURL, settings);
-               }];
 }
 
 #pragma mark - Plugin lifecycle
