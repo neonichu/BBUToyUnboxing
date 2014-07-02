@@ -24,9 +24,11 @@
 		A19D9FF019595C8B00741C09 /* BBUToyUnboxing.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FEF19595C8B00741C09 /* BBUToyUnboxing.m */; };
 		A19D9FF919595D6A00741C09 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FF819595D6A00741C09 /* Aspects.m */; };
 		A1C53DC5196355B0008EC61A /* BBUHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A13127AE1963545100F418CF /* BBUHook.m */; };
+		A1DB66B619649DAF00F8793D /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D9FF819595D6A00741C09 /* Aspects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A11F7B2819649C4B00E4EE6C /* DVTPlaygroundCommunication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTPlaygroundCommunication.h; sourceTree = "<group>"; };
 		A13127AD1963545100F418CF /* BBUHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUHook.h; sourceTree = "<group>"; };
 		A13127AE1963545100F418CF /* BBUHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUHook.m; sourceTree = "<group>"; };
 		A13F705919634AFB00C5CE4D /* libPlaygroundInjector.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPlaygroundInjector.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 			children = (
 				A1AAA5091962B3990016A226 /* DVTDeviceService.h */,
 				A16BBB541963013F00B60D95 /* DVTLineOffsetAwareStringWrapper.h */,
+				A11F7B2819649C4B00E4EE6C /* DVTPlaygroundCommunication.h */,
 				A16BBB57196301EB00B60D95 /* DVTSDK.h */,
 				A193022B196439DA003468F3 /* DVTSourceLanguageService.h */,
 				A15DFFC919642F0A0008EBE4 /* DVTTextSidebarView.h */,
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DB66B619649DAF00F8793D /* Aspects.m in Sources */,
 				A1C53DC5196355B0008EC61A /* BBUHook.m in Sources */,
 				A13F705E19634AFB00C5CE4D /* PlaygroundInjector.m in Sources */,
 			);
