@@ -17,6 +17,11 @@
 static void **handle;
 
 void InjectFrameworksIntoPlaygroundStub() {
+#if 0
+    NSString* bundleURLString = [NSProcessInfo processInfo].environment[@"PLAYGROUND_BUNDLE_URL"];
+    NSString* bundlePath = [NSURL URLWithString:bundleURLString].path;
+#endif
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (true) {
             NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:PlaygroundFrameworksPath];

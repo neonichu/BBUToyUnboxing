@@ -9,6 +9,7 @@
 #import "BBUHook.h"
 #import "BBUToyUnboxing.h"
 #import "IDELocalComputerPlaygroundExecutionDeviceService.h"
+#import "IDEPlaygroundExecutionParameters.h"
 #import "IDEPlaygroundExecutionSession.h"
 #import "IDESourceLanguageServiceSwift.h"
 
@@ -49,11 +50,19 @@ static BBUToyUnboxing *sharedPlugin;
 
     NSLog(PREFIX @"injecting %@ into Stub process.", pathToFramework);
 
+    __block NSURL* playgroundBundleURL = nil;
+
     [BBUHook hookClass:"IDELocalComputerPlaygroundExecutionDeviceService"
               selector:@selector(sessionForExecutingPlaygroundWithParameters:)
                options:AspectPositionBefore
                  block:^(id<AspectInfo> info, id parameters) {
                      setenv("DYLD_INSERT_LIBRARIES", [pathToFramework fileSystemRepresentation], 1);
+
+                     if (playgroundBundleURL) {
+                         setenv("PLAYGROUND_BUNDLE_URL",
+                                [[playgroundBundleURL absoluteString]
+                                 cStringUsingEncoding:NSUTF8StringEncoding], 1);
+                     }
                  }];
 
     [BBUHook hookClass:"IDEPlaygroundExecutionSession"
@@ -61,6 +70,15 @@ static BBUToyUnboxing *sharedPlugin;
                options:AspectPositionAfter
                  block:^(id<AspectInfo> info) {
                      setenv("DYLD_INSERT_LIBRARIES", "", 1);
+                 }];
+
+    [BBUHook hookClass:"IDEPlaygroundExecutionParameters"
+              selector:@selector(initWithSourceCodeToExecute:documentFileURL:documentContentTimestamp:autoTerminationDelay:executionPreparationParameters:playgroundReportResultBlock:playgroundExecutionWillFinishBlock:playgroundExpressionCompleteBlock:errorHandlerBlock:)
+               options:AspectPositionAfter
+                 block:^(id<AspectInfo> info, NSString* sourceCode, NSURL* documentFileURL,
+                         id timeStamp, unsigned long long delay, id parameters,
+                         id resultBlock, id willFinishBlock, id completionBlock, id errorBlock) {
+                     playgroundBundleURL = documentFileURL;
                  }];
 
     static NSString* const argumentsKey = @"swiftASTCommandArguments";
@@ -90,7 +108,7 @@ static BBUToyUnboxing *sharedPlugin;
                          mutableBuildSettings[argumentsKey] = [mutableArguments copy];
                          mutableContext[buildSettingsKey] = [mutableBuildSettings copy];
 
-                         NSLog(PREFIX @"Fixed context: %@", mutableContext);
+                         //NSLog(PREFIX @"Fixed context: %@", mutableContext);
                          [info.originalInvocation setArgument:&mutableContext atIndex:2];
                      }
 
