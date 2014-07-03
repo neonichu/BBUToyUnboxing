@@ -15,6 +15,6 @@ mkdir -p "${PLAYGROUND_DIR}" &&
 curl -L $FRAMEWORK_URI | tar xvz -C "${PLAYGROUND_DIR}"
 
 echo "Downloading Contentful Documentation Playground..."
-curl -L $PLAYGROUND_URI | tar xvfz -C "${HOME}/Desktop"
+curl -L $PLAYGROUND_URI | tar xvz -C "${HOME}/Desktop"
 
 echo -e "\nInstallation successful.\nPlease restart your Xcode and open the Playground after ~5 seconds."
