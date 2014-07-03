@@ -53,7 +53,7 @@ void InjectFrameworksIntoPlaygroundStub() {
                 sharedObjectPath = [sharedObjectPath stringByAppendingPathComponent:@"Versions/A"];
                 sharedObjectPath = [sharedObjectPath stringByAppendingPathComponent:sharedObjectName];
 
-                NSLog(PREFIX @"Loading shared object %@", sharedObjectPath);
+                //NSLog(PREFIX @"Loading shared object %@", sharedObjectPath);
 
                 handle[index] = dlopen([sharedObjectPath fileSystemRepresentation], RTLD_NOW);
                 index++;

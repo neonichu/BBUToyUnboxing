@@ -3,7 +3,7 @@
 FRAMEWORK_URI=https://github.com/neonichu/ContentfulDeliveryAPIFramework/releases/download/1.2.0/ContentfulDeliveryAPI.tar.gz
 PLAYGROUND_DIR="${HOME}/Library/Developer/Playground Frameworks"
 PLAYGROUND_URI=https://github.com/neonichu/ContentfulDeliveryAPIFramework/releases/download/1.2.0/ContentfulPlaygrounds.tar.gz
-PLUGIN_URI=https://github.com/neonichu/BBUToyUnboxing/releases/download/0.5/BBUToyUnboxing.xcplugin.tar.gz
+PLUGIN_URI=https://github.com/neonichu/BBUToyUnboxing/releases/download/0.6/BBUToyUnboxing.xcplugin.tar.gz
 PLUGINS_DIR="${HOME}/Library/Application Support/Developer/Shared/Xcode/Plug-ins"
 
 echo "Installing Xcode plug-in..."
