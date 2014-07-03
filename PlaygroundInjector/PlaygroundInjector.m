@@ -16,27 +16,44 @@
 
 static void **handle;
 
+static NSArray* ListOfFrameworksAtPath(NSString* path) {
+    NSArray* list = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+
+    NSMutableArray* mutableList = [@[] mutableCopy];
+    for (NSString* possibleFramework in list) {
+        if ([possibleFramework hasSuffix:@".framework"]) {
+            NSString* frameworkPath = [path stringByAppendingPathComponent:possibleFramework];
+            [mutableList addObject:frameworkPath];
+        }
+    }
+
+    return [mutableList copy];
+}
+
 void InjectFrameworksIntoPlaygroundStub() {
-#if 0
     NSString* bundleURLString = [NSProcessInfo processInfo].environment[@"PLAYGROUND_BUNDLE_URL"];
-    NSString* bundlePath = [NSURL URLWithString:bundleURLString].path;
-#endif
+    NSString* bundlePath = [[NSURL URLWithString:bundleURLString].path stringByDeletingLastPathComponent];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (true) {
             NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:PlaygroundFrameworksPath];
-            NSArray* list = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
 
-            NSUInteger frameworkCount = [list count];
+            NSMutableArray* allFrameworksToLoad = [@[] mutableCopy];
+            [allFrameworksToLoad addObjectsFromArray:ListOfFrameworksAtPath(path)];
+            [allFrameworksToLoad addObjectsFromArray:ListOfFrameworksAtPath(bundlePath)];
+
+            NSUInteger frameworkCount = [allFrameworksToLoad count];
             handle = realloc(handle, frameworkCount * sizeof(void*));
             uint32_t index = 0;
 
-            for (NSString* element in list) {
-                NSString* sharedObjectName = [element stringByDeletingPathExtension];
+            for (NSString* element in allFrameworksToLoad) {
+                NSString* sharedObjectName = [element.lastPathComponent stringByDeletingPathExtension];
 
-                NSString* sharedObjectPath = [path stringByAppendingPathComponent:element];
+                NSString* sharedObjectPath = element;
                 sharedObjectPath = [sharedObjectPath stringByAppendingPathComponent:@"Versions/A"];
                 sharedObjectPath = [sharedObjectPath stringByAppendingPathComponent:sharedObjectName];
+
+                NSLog(PREFIX @"Loading shared object %@", sharedObjectPath);
 
                 handle[index] = dlopen([sharedObjectPath fileSystemRepresentation], RTLD_NOW);
                 index++;

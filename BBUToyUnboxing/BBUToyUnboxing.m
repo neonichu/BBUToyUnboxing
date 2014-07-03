@@ -88,6 +88,8 @@ static BBUToyUnboxing *sharedPlugin;
               selector:@selector(_applyChangesFromSourceLanguageServiceContext:)
                options:AspectPositionInstead
                  block:^(id<AspectInfo> info, NSDictionary* context) {
+                     NSString* bundlePath = [playgroundBundleURL.path stringByDeletingLastPathComponent];
+
                      NSMutableDictionary* mutableContext = [context mutableCopy];
                      NSMutableDictionary* mutableBuildSettings = [context[buildSettingsKey] mutableCopy];
                      NSMutableArray* mutableArguments = [mutableBuildSettings[argumentsKey] mutableCopy];
@@ -102,6 +104,11 @@ static BBUToyUnboxing *sharedPlugin;
                      if (insertionIndex < mutableArguments.count) {
                          [mutableArguments insertObject:@"-F" atIndex:insertionIndex];
                          [mutableArguments insertObject:[NSHomeDirectory() stringByAppendingPathComponent:PlaygroundFrameworksPath] atIndex:insertionIndex + 1];
+
+                         if (bundlePath) {
+                             [mutableArguments insertObject:@"-F" atIndex:insertionIndex + 2];
+                             [mutableArguments insertObject:bundlePath atIndex:insertionIndex + 3];
+                         }
                      }
 
                      if (mutableArguments && mutableBuildSettings) {
