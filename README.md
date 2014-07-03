@@ -1,3 +1,5 @@
+![Contentful Playground in Xcode](Screenshots/contentful-playground.png)
+
 Xcode 6 plugin which allows usage of custom frameworks inside [Playgrounds][4]. Currently, this only supports OS X Playgrounds.
 
 Place your own frameworks into `$HOME/Library/Developer/Playground Frameworks` and they will be automatically picked up. You can also place them next to whatever `.playground` bundle you are opening and they will be loaded.
