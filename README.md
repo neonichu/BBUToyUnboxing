@@ -2,6 +2,12 @@ Xcode 6 plugin which allows usage of custom frameworks inside [Playgrounds][4]. 
 
 Place your own frameworks into `$HOME/Library/Developer/Playground Frameworks` and they will be automatically picked up. You can also place them next to whatever `.playground` bundle you are opening and they will be loaded.
 
+There is a quick installation script, which will give you the plugin, the [Contentful SDK][8] and a Documentation Playground for that, so that you have a demo of the usefulness of this. Just run:
+
+    curl -fsSL https://raw.github.com/neonichu/BBUToyUnboxing/master/Scripts/install.sh | sh
+
+and you are good.
+
 If you are interested in the behind the scenes stuff, check out [slides][5] of my talk at NSLondon or visit my upcoming talk at [SwiftCrunch][6].
 
 **Note:** The plugin ships with a pre-built version of `libPlaygroundInjector.dylib` which will be placed inside the plugin bundle. If you build it yourself using the corresponding target, this version will be preferred instead of the binary version. It is just there to make the installation via [Alcatraz][7] possible.
@@ -15,6 +21,12 @@ Either
 or
 
 - Install it via [Alcatraz][7]
+
+or
+
+- Use the quick installation script:
+
+        curl -fsSL https://raw.github.com/neonichu/BBUToyUnboxing/master/Scripts/install.sh | sh
 
 In any case, relaunch Xcode to load it.
 
@@ -36,3 +48,4 @@ Many thanks to [Sam Marshall][1] for his [initial research][2] on the topic. Als
 [5]: https://speakerdeck.com/neonichu/custom-playgrounds
 [6]: http://swiftcrunch.com
 [7]: http://alcatraz.io/
+[8]: https://www.contentful.com/
