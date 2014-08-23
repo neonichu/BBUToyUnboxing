@@ -1,3 +1,9 @@
+As of Xcode 6 Beta 5, this plugin __no longer needed__ to use custom frameworks inside Playgrounds. This repository is just here for historical purposes.
+
+To use custom frameworks, simply put your Playground in the same Xcode project as your framework target, see [this](https://github.com/neonichu/ContentfulDeliveryAPIFramework/tree/master/Playgrounds/SmallContentfulPlayground.playground) as an example.
+
+---
+
 ![Contentful Playground in Xcode](Screenshots/contentful-playground.png)
 
 Xcode 6 plugin which allows usage of custom frameworks inside [Playgrounds][4]. Currently, this only supports OS X Playgrounds.
